@@ -23,6 +23,8 @@ Dashboard Yellow connector:
 - pin 2 - Speed car
 - pin 10 - Fuel
 
+Сontrol unit (injector) pin 53 or 54
+
 
 Components:
 - Arduino UNO
