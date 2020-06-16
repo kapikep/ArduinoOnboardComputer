@@ -5,13 +5,13 @@
 LiquidCrystal_I2C lcd(0x27, 16, 2); // Set the LCD address to 0x27 for a 16 chars and 2 line display
 
 
-#define INJ_PIN 2
-#define SPEED_PIN 3
-#define BTN_PIN 8
-#define RPM_PIN 6
-#define VOLT_PIN 3
-#define TEMP_ENG_PIN 1
-#define TANK_PIN 2
+#define INJ_PIN 2 //Форсунка
+#define SPEED_PIN 3 //Датчик скорости
+#define BTN_PIN 8 //Кнопка
+#define RPM_PIN 6 //Обороты двигателя
+#define VOLT_PIN A3 //Вольтметр
+#define TEMP_ENG_PIN A1 //Температура двигателя
+#define TANK_PIN A2 //Датчик уровня топлива
 #define RADIO_PIN 9
 #define ONE_WIRE_BUS 13 // сигнальный провод датчика
 #define VOLUP 0x04
