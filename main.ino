@@ -19,7 +19,8 @@ LiquidCrystal_I2C lcd(0x27, 16, 2); // Set the LCD address to 0x27 for a 16 char
 #define PULSEWIDTH 555
 #define ADDRESS 0x47//47
 #define value_radio  3 //на сколько изменить громкость радио на скорости
-#define speed_radio  75 //на какой скорости менять громкость радио
+#define speed_radio_up  85 //на какой скорости менять громкость радио вверх
+#define speed_radio_down  70 //на какой скорости менять громкость вниз
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensor(&oneWire);
 
@@ -331,7 +332,7 @@ void button() {
 }
 
 void radio() {
-  if (spd > speed_radio) {
+  if (spd > speed_radio_up) {
     if (value_radio_count < value_radio) {
       SendCommand(VOLUP);
       delay(2);
@@ -339,7 +340,8 @@ void radio() {
       delay(20);
       value_radio_count++;
     }
-  } else {
+  } 
+  else if (spd < speed_radio_down){
     if (value_radio_count > 0) {
       SendCommand(VOLDOWN);
       delay(2);
